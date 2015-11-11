@@ -16,7 +16,6 @@ module.exports = function(str) {
     
     str = (str && str.constructor === String)? str : '';
    	
-    // Subsequent validation not needed as loop will never enter if '.' doesn't exist
     (str.match(/\{+[a-f0-9]*.*?\}+/g) || []).forEach(function(match) {
       var search = (match.match(/[a-f0-9]*\.+[^\}\s]*/g) || [])[0],
           segments = search && search.split('.'),
